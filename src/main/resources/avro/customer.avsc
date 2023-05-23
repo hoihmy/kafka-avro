@@ -1,6 +1,7 @@
 {
     "type": "record",
     "name": "Customer",
+    "namespace":"com.hmy",
     "fields": [
         {"name": "name", "type": "string"},
         {"name": "email", "type": "string"},

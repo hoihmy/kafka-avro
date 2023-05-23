@@ -7,12 +7,14 @@ public class Customer {
     private String email;
     private int age;
     private String phoneNumber;
+    private String gender;
 
-    public Customer(String name, String email, int age, String phoneNumber) {
+    public Customer(String name, String email, int age, String phoneNumber, String gender) {
         this.name = name;
         this.email = email;
         this.age = age;
         this.phoneNumber = phoneNumber;
+        this.gender = gender;
     }
 
     public String getName() {
@@ -47,21 +49,29 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return Objects.equals(name, customer.name) && Objects.equals(email, customer.email) && Objects.equals(age, customer.age) && Objects.equals(phoneNumber, customer.phoneNumber);
+        return Objects.equals(name, customer.name) && Objects.equals(email, customer.email) && Objects.equals(age, customer.age) && Objects.equals(phoneNumber, customer.phoneNumber) && Objects.equals(gender, customer.gender);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, email, age, phoneNumber);
+        return Objects.hash(name, email, age, phoneNumber, gender);
     }
 
     @Override
     public String toString() {
-        return String.format("[ Name: %s | Email Address: %s | Age: %s | Phone: %s ]", name, email, age, phoneNumber);
+        return String.format("[ Name: %s | Email Address: %s | Age: %s | Phone: %s | Gender: %s ]", name, email, age, phoneNumber, gender);
     }
 }

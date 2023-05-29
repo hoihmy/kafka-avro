@@ -7,6 +7,6 @@ public class CustomerGenerator {
 
     public static Customer getNext() {
         final String customer = "customer" + counter++;
-        return new Customer(customer, customer + "@gmail.com", 25, "+84 0123 456789", "male");
+        return new Customer(customer, customer + "@gmail.com", 25, "+84 0123 456789", "male", 5.0);
     }
 }

@@ -7,6 +7,7 @@
         {"name": "email", "type": "string"},
         {"name": "age", "type": "int"},
         {"name": "phoneNumber", "type": "string"},
-        {"name": "gender", "type": "string"}
+        {"name": "gender", "type": "string", "default": "female"},
+        {"name": "rating", "type": ["double", "int"], "default": 0}
     ]
 }

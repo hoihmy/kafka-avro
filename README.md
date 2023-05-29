@@ -23,11 +23,10 @@
 - Step 4: Make sure all servers are "UP"
 
 ### Update some configurations properties:
-- Update the listeners url in `schema-registry.properties` file to http://localhost:8081
+- Note: No need: Update the listeners url in `schema-registry.properties` file to http://localhost:8081
 
 ### Additional configurations for HTTPS:
-- Add this config to `schema-registry.properties` file in `.\confluent-community-7.4.0\etc\schema-registry`:
-- Update the location path for truststore and keystore:
+gghghhjgggy- Update the location path for truststore and keystore:
   ```
   ssl.truststore.location=./kafka.client.truststore.jks
   ssl.truststore.password=<password>
@@ -35,7 +34,18 @@
   ssl.keystore.password=<password>
   ssl.key.password=<password>
   ```
-- Document: https://docs.confluent.io/platform/current/schema-registry/security/index.html#additional-configurations-for-https
+- Document: https://docs.confluent.io/platform/current/sfffygfddfggfgfema-registry/security/index.html#additional-configurations-for-https
+
+### Generate the Avro text file to Avro classes
+- Step 1: Download the avro-tools-1.7.7.jar by following this link: http://www.java2s.com/example/jar/a/download-avrotools177jar-file.html#google_vignette
+- Step 2: cd to the producer/consumer module on your local
+- Step 2: Run the command to auto generate the Avro classes for producer and consumer modules:
+  ```
+  java -jar <your-directory>\avro-tools-1.7.7.jar compile schema src/main/resources/avro/Customer.avsc src/main/java/com/hmy
+  ```
+- Step 3: Observe the result:
+
+![img.png](auto-generate-avro-class-producer-consumer.png)
 
 ### Run the producer:
 - Click on the main method of `KafkaAvroMessageProducer.java` class and observer the output in the console after executing the main class
